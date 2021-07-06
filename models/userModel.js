@@ -4,11 +4,11 @@ const db = require('./conn');
 const bcrypt = require('bcryptjs');
 
 class UserModel {
-    constructor(id, first_name, last_name, username, password) {
+    constructor(id, first_name, last_name, user_name, password) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.username = username;
+        this.user_name = user_name;
         this.password = password;
     }
 
@@ -27,11 +27,11 @@ class UserModel {
         return bcrypt.compareSync(this.password, hashedPassword)
     }
 
-    static async createNewUser(first_name, last_name, username, password) {
+    static async createNewUser(first_name, last_name, user_name, password) {
         try {
-            const query = `INSERT INTO users (first_name, last_name, username, password)
+            const query = `INSERT INTO users (first_name, last_name, user_name, password)
             VALUES
-                ('${first_name}', '${last_name}', '${username}', '${password}')
+                ('${first_name}', '${last_name}', '${user_name}', '${password}')
             RETURNING id;`;
             const response = await db.one(query);
             console.log("New User Response: ", response);
@@ -45,13 +45,13 @@ class UserModel {
     async login() {
         try {
             // lookup user by email
-            const query = `SELECT * FROM users WHERE username = '${this.username}';`;
+            const query = `SELECT * FROM users WHERE user_name = '${this.user_name}';`;
             const response = await db.one(query);
             // check user's password based on hash
             const isValid = this.checkPassword(response.password);
             // return response to the controller, either valid or invalid
             if (!!isValid) {
-                const { id, username} = response;
+                const { id, user_name} = response;
                 return {isValid, user_id: id, username}
             } else {
                 return { isValid }
