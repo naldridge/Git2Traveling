@@ -1,0 +1,32 @@
+#nav-bar {
+    background-color: #353535d7;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+#nav-bar li {
+    float: left;
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+#nav-bar li a {
+    color: white;
+}
+
+#nav-bar li:hover {
+    background-color: lightgrey;
+}
+
+#nav-bar li:hover a {
+    color: yellow;
+}
+
+#users {
+    float: right;
+}
