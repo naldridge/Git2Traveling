@@ -44,7 +44,7 @@ class UserModel {
 
     async login() {
         try {
-            // lookup user by email
+            // lookup user by username
             const query = `SELECT * FROM users WHERE user_name = '${this.user_name}';`;
             const response = await db.one(query);
             // check user's password based on hash
@@ -52,7 +52,7 @@ class UserModel {
             // return response to the controller, either valid or invalid
             if (!!isValid) {
                 const { id, user_name} = response;
-                return {isValid, user_id: id, username}
+                return {isValid, user_id: id, user_name}
             } else {
                 return { isValid }
             }
