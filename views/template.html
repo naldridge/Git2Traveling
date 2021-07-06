@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 <body>
+    <ul id="nav-bar">
+        <div>
+            <li><a href="/">HOME</a></li>
+            <li><a href="#">PLAN A TRIP</a></li>
+            <li><a href="/">ABOUT US</a></li>
+        </div>
+        <div id="users">
+            ${!!is_logged_in ?
+           `<li><a href="/">YOUR TRIPS</a></li>
+            <li><a href="/users/logout">Logout</a></li>`
+            :
+            `
+
+            <li><a href="/users/register">Register</a></li>
+            <li><a href="/users/login">Login</a></li>
+            `}
+        </div>
+    </ul>
+
     ${body}
 </body>
 </html>
