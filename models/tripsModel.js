@@ -23,6 +23,17 @@ class tripsModel {
             return err;
         }
     }
+
+    static async addTrip() {
+        try {
+            const query = `INSERT INTO trips (location, trip_name, trip_date, user_id) VALUES ('${this.location}', '${this.trip_name}', ${trip_date}, ${user_id})`;
+            const response = await db.result(query);
+            return response;
+        } catch (err) {
+            console.error("Error: ", err);
+            return err;
+        }
+    }
 }
 
 
