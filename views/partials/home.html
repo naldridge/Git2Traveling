@@ -1,200 +1,23 @@
-<!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="/browserref.css">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
 
-
-<style>
-    body,
-    html {
-        height: 100%;
-        margin: 0;
-        font: 400 15px/1.8 "Lato", sans-serif;
-        color: #777;
-    }
-    
-    .bgimg-1 {
-        position: relative;
-        opacity: 0.75;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    
-    .bgimg-1 {
-        background-image: url('https://wallpaperaccess.com/full/185289.jpg');
-        min-height: 100%;
-    }
-    
-    .caption {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 100%;
-        text-align: center;
-        color: #000;
-    }
-    
-    .caption span.border {
-        background-color: #111;
-        color: #fff;
-        padding: 18px;
-        font-size: 25px;
-        letter-spacing: 10px;
-    }
-    
-    h3 {
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        font: 20px "Lato", sans-serif;
-        color: #111;
-    }
-    
-    .test {
-        animation: MoveUpDown 2s linear infinite;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        top: 80%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%)
-    }
-    
-    @keyframes MoveUpDown {
-        0% {
-            bottom: 0;
-        }
-        50% {
-            bottom: 100px;
-        }
-        100% {
-            bottom: 0;
-        }
-    }
-    /* Turn off parallax scrolling for tablets and phones */
-    
-    @media only screen and (max-device-width: 1024px) {
-        .bgimg-1,
-        .bgimg-2,
-        .bgimg-3 {
-            background-attachment: scroll;
-        }
-    }
-</style>
-
-<head>
-    <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-                <i class="fa fa-bars"></i>
-            </a>
-            <a href="/home" class="w3-bar-item w3-button">HOME</a>
-            <a href="/login" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user-circle"></i> LOGIN</a>
-            <a href="/register" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-pencil"></i> CREATE ACCOUNT</a>
-
-        </div>
-
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-            <a href="/views/partials/login.html" class="w3-bar-item w3-button" onclick="toggleFunction()">LOGIN</a>
-            <a href="/views/partials/register.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CREATE ACCOUNT</a>
-        </div>
-    </div>
-
-
-
-</head>
-
-<body>
-
-    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Git2Traveling <span class="w3-hide-small"></span></span>
-        </div>
-
-
-
-        <div class="test">
-
-            <span class="border" style="background-color:transparent; font-size:50px;color: #f7f7f7;"><i class="fa fa-angle-double-down"></i></span>
-
-        </div>
-    </div>
-
-
-
-    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-        <h3 style="text-align:center;">Your Personal Advisor</h3>
-        <p> Git2Traveling is a web application to help design and plan your next vacations. Customize your ideal vacation through personalizing your trips from start to finish. Choose from your favorite airlines, destinations, and restaurants. Discover new
-            restaurants and filter through them based on different criteria. Take the opportunity to hear what others are saying about local places. Be your own personal trip advisor.</p>
-    </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+            <div class="modal-body">
+                ...
             </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
     </div>
-
-
-
-</body>
-
-<!-- <script>
-    // Modal Image Gallery
-    function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-    }
-
-    // Change style of navbar on scroll
-    window.onscroll = function() {
-        myFunction()
-    };
-
-    function myFunction() {
-        var navbar = document.getElementById("myNavbar");
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-        } else {
-            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-        }
-    }
-
-    // Used to toggle the menu on small screens when clicking on the menu button
-    function toggleFunction() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-</script> -->
-
-</html>
+</div>
