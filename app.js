@@ -45,3 +45,4 @@ app.use('/', rootController);
 app.use('/', userController);
 app.use('/', tripsController);
 app.use('/', aboutController);
+
