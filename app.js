@@ -35,6 +35,7 @@ server.listen(port, hostname, () => {
 const rootController = require('./routes/index');
 const userController = require('./routes/users');
 const tripsController = require('./routes/trips');
+const aboutController = require('./routes/about');
 
 app.get('/favicon.ico', (req, res) => {
     res.sendStatus(404);
@@ -43,3 +44,4 @@ app.get('/favicon.ico', (req, res) => {
 app.use('/', rootController);
 app.use('/', userController);
 app.use('/', tripsController);
+app.use('/', aboutController);
