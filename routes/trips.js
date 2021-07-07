@@ -34,4 +34,16 @@ router.get('/trips_history', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    const { location, trip_name, trip_date, user_id } = req.body;
+    const trip = new tripsModel(null, location, trip_name, trip_date, user_id);
+    const response = await trip.addTrip();
+    if (response.rowCount >= 1) {
+        res.redirect('back');
+    } else {
+        res.sendStatus(500);
+    }
+});
+})
+
 module.exports = router;
