@@ -14,9 +14,15 @@ CREATE TABLE trips (
 );
 
 
-/*CREATE TABLE itinerary (
+CREATE TABLE itinerary (
     id serial PRIMARY KEY,
-    
-);*/
+    local_trip_name text NOT NULL,
+    destination varchar(255),
+    leisure varchar(255),
+    dining varchar(255),
+    transport varchar(255),
+    budget INTEGER
+       
+);
 
 
