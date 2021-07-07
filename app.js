@@ -1,8 +1,8 @@
 'use strict';
-const http = require('http');
 
-const hostname = '127.0.0.1';
-const port = 3333;
+const http = require('http');
+const hostname = "127.0.0.1";
+const port = 3000;
 
 const express = require('express');
 const session = require('express-session');
@@ -15,10 +15,10 @@ app.set('view engine', 'html');
 
 app.use(
     session({
-        secret: 'get rad!',
+        secret: 'Safe Travels!',
         resave: false,
         saveUninitialized: false,
-        is_logged_in: false,
+        is_logged_in: false
     })
 );
 
@@ -34,6 +34,8 @@ server.listen(port, hostname, () => {
 
 const rootController = require('./routes/index');
 const userController = require('./routes/users');
+const tripsController = require('./routes/trips');
+const aboutController = require('./routes/about');
 
 app.get('/favicon.ico', (req, res) => {
     res.sendStatus(404);
@@ -41,3 +43,6 @@ app.get('/favicon.ico', (req, res) => {
 
 app.use('/', rootController);
 app.use('/', userController);
+app.use('/', tripsController);
+app.use('/', aboutController);
+
