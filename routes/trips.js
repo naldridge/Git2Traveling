@@ -20,7 +20,7 @@ router.get('/trips_plan', (req, res) => {
 router.get('/trips_history', (req, res) => {
     const user_id = req.session.user_id;
     const trips = new tripsModel();
-        tripsData = await trips.getTripByUser(user_id);
+        tripsData = trips.getTripByUser(user_id);
     
     res.render('template', {
         locals: {
@@ -37,13 +37,13 @@ router.get('/trips_history', (req, res) => {
 router.post('/', (req, res) => {
     const { location, trip_name, trip_date, user_id } = req.body;
     const trip = new tripsModel(null, location, trip_name, trip_date, user_id);
-    const response = await trip.addTrip();
+    const response = trip.addTrip();
     if (response.rowCount >= 1) {
         res.redirect('back');
     } else {
         res.sendStatus(500);
     }
 });
-})
+
 
 module.exports = router;
