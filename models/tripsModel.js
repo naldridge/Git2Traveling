@@ -12,12 +12,12 @@ class tripsModel {
         this.user_id = user_id;
     }
 
-    static async getTripbyUser() {
+    static async getTripByUser() {
         try {
             const response = await db.any(
                 `SELECT * FROM trips WHERE user_id = ${this.user_id};`
             )
-                return response;
+            return response;
         } catch (err) {
             console.error("Error: ", err);
             return err;
