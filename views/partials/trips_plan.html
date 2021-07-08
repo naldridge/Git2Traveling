@@ -7,18 +7,48 @@
         <input type="text" name="location">
     </ul>
     <ul>
-        <label for="fromDate">From:</label>
-        <input type="date" name="fromDate">
+        <label for="trip_start_date">From:</label>
+        <input type="date" id="start_date" name="trip_start_date">
     </ul>
     <ul>
-        <label for="toDate">To:</label>
-        <input type="date" name="toDate">
+        <label for="trip_end_date">To:</label>
+        <input type="date" id="end_date" name="trip_end_date" >
+    </ul>
+    <!-- <input type="hidden" id="numdays" value=""> -->
+    <button id="startItinerary" type="button">Let's Get Started!</button>
+</form>
+
+<form id="tripItinerary">
+    <ul>
+        <label for="day">Day:</label>
+        <select id="day" name="day"></select>
+    </ul>
+    <ul>
+        <label for="destination">Destination:</label>
+        <input type="text" name="destination">
+    </ul>
+    
+    <ul>
+        <label for="leisure">Leisure:</label>
+        <input type="text" name="leisure">
+    </ul>
+    <ul>
+        <label for="dining">Dining:</label>
+        <input type="text" name="dining">
+    </ul>
+    <ul>
+        <label for="transport">Transportation:</label>
+        <input type="text" name="transport">
+    </ul>
+    <ul>
+        <label for="Budget">Budget:</label>
+        <input type="number" name="budget">
+    </ul>
+    <ul>
+        <input type="hidden" name="trip_id">
     </ul>
 </form>
 
-<form id="tripLog">
-    <input type="hidden" name="location" value
-</form>
 ${!!is_logged_in ?
     `<button type="submit"></button> `
     :
@@ -188,3 +218,4 @@ ${!!is_logged_in ?
 </body>
 
 </html>
+
