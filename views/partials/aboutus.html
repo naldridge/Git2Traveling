@@ -1,4 +1,3 @@
-
 <div class="header">
     <h1>About Us</h1>
 </div>
@@ -81,6 +80,7 @@
     Full-Stack Developer bootcamp. They have a passion for traveling and are seeking to improve your experience while
     planning a future trip.</p>
 
+
 <div id="aboutDavid">
     <p>Picture</p>
     <p>Little Excerpt</p>
@@ -96,4 +96,157 @@
     <p>Picture</p>
     <p>Little Excerpt</p>
     <p>Links to Social, GitHub, etc.</p>
-</div>
+</div> -->
+<style>
+        * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    body {
+        font-family: "roboto";
+        color: #fff;
+    }
+    
+    section {
+        height: 100%;
+        padding: 2em 0;
+    }
+    
+    .section1 {
+        background-color: coral;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        padding-bottom: 10%;
+    }
+    
+    .section2 {
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        padding-bottom: 10%;
+    }
+    
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+    .title {
+        text-align: center;
+        font-size: 2em;
+    }
+    
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2em 0;
+    }
+    
+    .img-wrapper {
+        width: 50%;
+    }
+    
+    .img {
+        width: 300px;
+        height: 300px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    
+    .img-two {
+        width: 300px;
+        height: 300px;
+        background: black;
+        margin: 0 auto;
+    }
+    
+    .text-wrapper {
+        width: 50%;
+    }
+    
+    .text-wrapper-two {
+        width: 50%;
+        color: black;
+    }
+    
+    .text {
+        margin-bottom: 1em;
+    }
+    
+    .btn-wrapper {
+        margin-top: 2em;
+    }
+    
+    .btn {
+        display: inline-block;
+        cursor: pointer;
+        border: 2px solid #fff;
+        padding: 0.5em 2em;
+        font-size: 1.1em;
+        font-weight: 600;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    .btn-two {
+        display: inline-block;
+        cursor: pointer;
+        border: 2px solid black;
+        padding: 0.5em 2em;
+        font-size: 1.1em;
+        font-weight: 600;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    .btn:hover {
+        background-color: #fff;
+        color: coral;
+        .btn-two:hover {
+            color: coral;
+        }
+</style>
+<section class="section1">
+    <div class="container">
+        <h1 class="title">Get To Know The Team</h1>
+        <div class="content-wrapper">
+            <div class="img-wrapper">
+                <div class="img"></div>
+            </div>
+            <div class="text-wrapper">
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eaque deserunt aliquam. Provident labore molestias sequi autem deleniti eaque nisi corporis eveniet perferendis, ut iusto, recusandae praesentium harum distinctio iste!
+                </p>
+                <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, fugit. Aperiam dignissimos voluptates praesentium fugit facere maiores, dolorum obcaecati maxime.
+                </p>
+                <div class="btn-wrapper">
+                    <a href="#" class="btn">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section2">
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="img-wrapper">
+                <div class="img-two"></div>
+            </div>
+            <div class="text-wrapper-two">
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eaque deserunt aliquam. Provident labore molestias sequi autem deleniti eaque nisi corporis eveniet perferendis, ut iusto, recusandae praesentium harum distinctio iste!
+                </p>
+                <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, fugit. Aperiam dignissimos voluptates praesentium fugit facere maiores, dolorum obcaecati maxime.
+                </p>
+                <div class="btn-wrapper-two">
+                    <a href="#" class="btn-two">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
