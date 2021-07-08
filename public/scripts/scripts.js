@@ -34,18 +34,28 @@ function createDaysDrop(daysList) {
     select.AppendChild(option);
 }
  */
+const dropdown = document.getElementById("day");
 
-startItinerary.addEventListener(onclick, function(){
-    const start = document.getElementById("start_date").value;
-    const end = document.getElementById("end_date").value;
-    let options = "";
-    for(let day = start; day <=end; day++){
-      options += "<option value=" + day + ">" + day + "</option>"
+const startDate = document.getElementById("start_date");
+const endDate = document.getElementById("end_date");
+
+
+startItinerary.addEventListener("click", function () {
+    console.log(typeof startDate.value);
+    console.log(endDate.value);
+    const diffTime = Math.abs(new Date(endDate.value) - new Date(startDate.value));
+    const diffDays = Math.ceil(diffTime / (24 * 3600 * 1000));
+
+    console.log(diffDays);
+
+
+    for (let day = 1; day <= diffDays; day++) {
+        const dropOption = document.createElement("option");
+        dropOption.innerText = day;
+        dropdown.appendChild(dropOption);
     }
-    console.log(options);
-    document.getElementById("day").innerText = options;
 });
-
+/*
 function daysList() {
     let start = document.getElementById("start_date").value;
     let end = document.getElementById("end_date").value;
@@ -56,5 +66,5 @@ function daysList() {
     document.getElementById("day").innerText = options;
 }
 
-
+ */
 
