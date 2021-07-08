@@ -17,16 +17,18 @@ router.get('/trips_plan', (req, res) => {
 });
 
 
-router.get('/trips_history', (req, res) => {
+router.get('/trips_history', async (req, res) => {
     const user_id = req.session.user_id;
-    const trips = new tripsModel();
-        tripsData = await trips.getTripByUser(user_id);
+    //const trips = new tripsModel();
+    const tripsList = await tripsModel.getTripByUser(user_id);
+    console.log("tripsList: ", tripsList);
     
     res.render('template', {
         locals: {
             title: "Trip History",
-            trip: tripsData,
-            is_logged_in: req.session.is_logged_in
+            trip: tripsList,
+            is_logged_in: req.session.is_logged_in,
+            user_id: req.session.user_id
         },
         partials: {
             body: 'partials/trips_history'
@@ -34,16 +36,16 @@ router.get('/trips_history', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/',  (req, res) => {
     const { location, trip_name, trip_date, user_id } = req.body;
     const trip = new tripsModel(null, location, trip_name, trip_date, user_id);
-    const response = await trip.addTrip();
+    const response = trip.addTrip();
     if (response.rowCount >= 1) {
         res.redirect('back');
     } else {
         res.sendStatus(500);
     }
 });
-})
+
 
 module.exports = router;
