@@ -1,5 +1,6 @@
 <h1>View Your Past Trips:</h1>
 <ul>
+
     ${trip.map(data =>
         `<li>${data.trip_name}</li>
         <ul>
@@ -7,4 +8,5 @@
             <li>${data.trip_start_date}  -  ${data.trip_end_date}</li>
         </ul>`
         ).join('')}
+
 </ul>

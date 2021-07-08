@@ -15,23 +15,26 @@
         <div>
             <li><a href="/">HOME</a></li>
             <li><a href="/trips_plan">PLAN A TRIP</a></li>
+            <li><a href="/tripList">MY TRIPS</a></li>
             <li><a href="/about">ABOUT US</a></li>
         </div>
         <div id="users">
-            ${!!is_logged_in ?
-           `<li><a href="/trips_history">YOUR TRIPS</a></li>
-            <li><a href="/users/logout">Logout</a></li>`
-            :
-            `<li><a href="/users/register">Register</a></li>
-             <li><a href="/users/login">Login</a></li>
-                `}
-            </div>
-        </ul>
+            ${!!is_logged_in ? `
+            <li><a href="/trips_history">YOUR TRIPS</a></li>
+            <li><a href="/users/logout">Logout</a></li>` : `
+            <li><a href="/users/register">Register</a></li>
+            <li><a href="/users/login">Login</a></li>
+
+            `}
+        </div>
+    </ul>
     </header>
 
     ${body}
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="/scripts/scripts.js"></script>
+
 
 </body>
 
