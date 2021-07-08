@@ -12,15 +12,14 @@ class tripsModel {
         this.user_id = user_id;
     }
 
-    static async getTripbyUser() {
+    static async getTripByUser(user_id) {
         try {
             const response = await db.any(
-                `SELECT * FROM trips WHERE user_id = ${this.user_id};`
-            )
+                `SELECT * FROM trips WHERE user_id = ${user_id};`)
                 return response;
         } catch (err) {
             console.error("Error: ", err);
-            return err;
+            return err.message;
         }
     }
 
@@ -31,7 +30,7 @@ class tripsModel {
             return response;
         } catch (err) {
             console.error("Error: ", err);
-            return err;
+            return err.message;
         }
     }
 }
