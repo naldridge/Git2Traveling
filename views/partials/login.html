@@ -1,9 +1,192 @@
-<h1>User Login</h1>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Itim&display=swap');
+     :root {
+        --color-primary: #FFFFFF;
+        --color-secondary: #2C3539;
+        --color-accent: #336072;
+        --color-input: #8C847B;
+        --text-header: 36px;
+        --text-button: 18px;
+        --text-input: 24px;
+    }
+    
+    html,
+    body {
+        height: 100%;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        background-image: url(https://www.publicdomainpictures.net/pictures/270000/velka/map-travel-travel-mapexplore-ca.jpg);
+    }
+    
+    .main-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .background-text h2 {
+        text-align: center;
+        font-family: 'Itim', cursive;
+        color: black;
+        font-size: var(--text-header);
+        font-weight: 400;
+    }
+    
+    .login-header {
+        text-align: center;
+        padding-top: 1.5em;
+        line-height: 4px;
+    }
+    
+    .login-header h1 {
+        font-weight: bold;
+        font-size: var(--text-header);
+        color: var(--color-secondary);
+    }
+    
+    .login-header a {
+        text-decoration: none;
+        font-size: var(--text-button);
+        color: var(--color-accent);
+    }
+    
+    .login-header a:hover {
+        text-decoration: underline;
+    }
+    
+    .login-panel-wrapper {
+        position: relative;
+    }
+    
+    .login-pannel {
+        height: 37.500em;
+        width: 34.375em;
+        border-radius: 90px;
+        background-color: lightblue;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    .login-pannel img {
+        position: absolute;
+    }
+    
+    .login-form {
+        padding: 4.875em 4.375em 0em 4.375em;
+    }
+    
+    .login-form .form-color {
+        color: var(--color-input);
+    }
+    
+    .login-form input {
+        font-size: var(--text-input);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        box-sizing: border-box;
+        border-radius: 12px;
+        padding: 1em;
+        opacity: 0.4;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        width: 100%;
+    }
+    
+    .login-form input:hover {
+        color: var(--color-accent);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        opacity: 0.8;
+        -webkit-transition: all 0.6s ease-in-out;
+        -moz-transition: all 0.6s ease-in-out;
+        -o-transition: all 0.6s ease-in-out;
+        transition: all 0.6s ease-in-out;
+    }
+    
+    .login-form input:focus {
+        background-color: var(--color-primary);
+        opacity: 0.8;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+    
+    .form button {
+        font-size: var(--text-input);
+        background-color: var(--color-primary);
+        color: var(--color-accent);
+        font-weight: bold;
+        border-radius: 12px;
+        border: 0px;
+        padding: 1em 2.4em 1em 2.4em;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+    
+    .form button:hover {
+        background-color: var(--color-accent);
+        color: var(--color-primary);
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .form-spacer {
+        padding-bottom: 1em;
+    }
+    
+    .form-spacer-large {
+        padding-bottom: 3.313em;
+    }
+    
+    .forgot-password {
+        font-size: var(--text-button);
+        color: var(--color-primary);
+    }
+    
+    .form-align {
+        text-align: left;
+        padding-top: 25px;
+    }
+    
+    .form-container {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        grid-gap: 20px;
+    }
+</style>
+<div class="main-wrapper">
+    <div class="login-pannel-wrapper">
+        <div class="background-text">
+            <h2>Jump back into travel planning</h2>
+        </div>
+        <div class="login-pannel">
+            <div class="login-header">
+                <h1>Login</h1>
+            </div>
+            <form class="login-form">
+                <div class="form form-spacer form-color">
+                    <input type="username" placeholder="username">
+                </div>
+                <div class="form form-spacer-large form-color">
+                    <input type="password" placeholder="password">
+                    <div class="form form-align">
+                        <a href="#" class="forgot-password">forgot password?</a>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form">
+                        <button>Log in</button>
+                    </div>
+                    <div class="form-container">
+                        <div class="form">
+                            <button>Not a member?</button>
+                        </div>
 
-<form action="/users/login" method="POST">
-    <label for="user_name">Username:</label>
-    <input type="text" name="user_name" placeholder="Obi1Kenobi" />
-    <label for="password">Password: </label>
-    <input type="password" name="password" placeholder="correct horse battery staple" />
-    <button type="submit">Login</button>
-</form>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </div>
