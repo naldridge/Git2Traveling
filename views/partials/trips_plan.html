@@ -1,4 +1,4 @@
-<!-- <h1>Begin Your Journey Here</h1>
+<h1>Begin Your Journey Here</h1>
 
 
 <form id="tripDates">
@@ -12,15 +12,13 @@
     </ul>
     <ul>
         <label for="trip_end_date">To:</label>
-        <input type="date" id="end_date" name="trip_end_date" >
+        <input type="date" id="end_date" name="trip_end_date">
     </ul>
-    <!-- <input type="hidden" id="numdays" value=""> -->
+    <ul>
+        <label for="trip_name">Nickname Your Trip:</label>
+        <input type="text" name="trip_name">
+    </ul>
 
-    <div> 
-
-
-        
-    </div>
     <button id="startItinerary" type="button">Let's Get Started!</button>
 </form>
 
@@ -33,7 +31,7 @@
         <label for="destination">Destination:</label>
         <input type="text" name="destination">
     </ul>
-    
+
     <ul>
         <label for="leisure">Leisure:</label>
         <input type="text" name="leisure">
@@ -56,9 +54,9 @@
 </form>
 
 ${!!is_logged_in ?
-    `<button type="submit"></button> `
-    :
-    ` `} -->
+`<button type="submit"></button> `
+:
+` `} -->
 
 
 <!DOCTYPE html>
@@ -70,12 +68,13 @@ ${!!is_logged_in ?
         * {
             box-sizing: border-box
         }
-        
+
         body {
             font-family: "Lato", sans-serif;
         }
+
         /* Style the tab */
-        
+
         .tab {
             float: left;
             border: 1px solid #ccc;
@@ -84,8 +83,9 @@ ${!!is_logged_in ?
             height: 400px;
             border-radius: 25px;
         }
+
         /* Style the buttons inside the tab */
-        
+
         .tab button {
             display: block;
             background-color: inherit;
@@ -100,18 +100,21 @@ ${!!is_logged_in ?
             font-size: 17px;
             border-radius: 25px;
         }
+
         /* Change background color of buttons on hover */
-        
+
         .tab button:hover {
             background-color: #ddd;
         }
+
         /* Create an active/current "tab button" class */
-        
+
         .tab button.active {
             background-color: #ccc;
         }
+
         /* Style the tab content */
-        
+
         .tabcontent {
             float: left;
             padding: 0px 12px;
@@ -122,18 +125,18 @@ ${!!is_logged_in ?
             border-radius: 25px;
             background-color: #f1f1f1;
         }
-        
+
         .plan-form {
             margin: auto;
         }
-        
+
         #form-container {
             display: block;
             grid-template-columns: 1.4fr 1fr;
             grid-gap: 20px;
             text-align: center;
         }
-        
+
         .form-button {
             position: relative;
         }
@@ -224,4 +227,3 @@ ${!!is_logged_in ?
 </body>
 
 </html>
-
