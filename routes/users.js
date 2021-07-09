@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const UserModel = require('../models/userModel');
 
 
-router.get('/users/register', (req, res) => {
+router.get('/register', (req, res) => {
     res.render('template', {
         locals: {
             title: 'New User Registration',
@@ -18,7 +18,7 @@ router.get('/users/register', (req, res) => {
     });
 })
 
-router.get('/users/login', (req, res) => {
+router.get('/login', (req, res) => {
     res.render('template', {
         locals: {
             title: 'User Login',
@@ -30,7 +30,7 @@ router.get('/users/login', (req, res) => {
     });
 })
 
-router.post('/users/register', async(req, res) => {
+router.post('/register', async(req, res) => {
     const { first_name, last_name, user_name, password } = req.body;
 
     const salt = bcrypt.genSaltSync();
@@ -45,7 +45,7 @@ router.post('/users/register', async(req, res) => {
     }
 });
 
-router.post('/users/login', async(req, res) => {
+router.post('/login', async(req, res) => {
     const { user_name, password } = req.body;
     const user = new UserModel(null, null, null, user_name, password);
     const response = await user.login();
@@ -57,13 +57,13 @@ router.post('/users/login', async(req, res) => {
         req.session.user_id = user_id;
         req.session.username = user_name;
 
-        res.redirect('/tripList');
+        res.redirect('/');
     } else {
         res.sendStatus(403);
     }
 });
 
-router.get('/users/logout', (req, res) => {
+router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 })

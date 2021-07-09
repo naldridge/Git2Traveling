@@ -42,7 +42,7 @@ app.get('/favicon.ico', (req, res) => {
 })
 
 app.use('/', rootController);
-app.use('/', userController);
-app.use('/', tripsController);
-app.use('/', aboutController);
+app.use('/users', userController);
+app.use('/trips', tripsController);
+app.use('/about', aboutController);
 
