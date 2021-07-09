@@ -166,19 +166,19 @@
             <div class="login-header">
                 <h1>Login</h1>
             </div>
-            <form class="login-form">
+            <form action="/users/login" method="POST" class="login-form">
                 <div class="form form-spacer form-color">
-                    <input type="username" placeholder="username">
+                    <input type="text" name="user_name" placeholder="username">
                 </div>
                 <div class="form form-spacer-large form-color">
-                    <input type="password" placeholder="password">
+                    <input type="password" name="password" placeholder="password">
                     <div class="form form-align">
                         <a href="#" class="forgot-password">forgot password?</a>
                     </div>
                 </div>
                 <div class="form-container">
                     <div class="form">
-                        <button>Log in</button>
+                        <button type="submit">Log in</button>
                     </div>
                     <div class="form-container">
                         <div class="form">
