@@ -1,4 +1,3 @@
-
 'use strict'
 
 const express = require('express');
@@ -18,16 +17,16 @@ router.get('/trips_plan', (req, res) => {
 });
 
 
-router.get('/trips_history', async (req, res) => {
+router.get('/trips_history', async(req, res) => {
     const user_id = req.session.user_id;
     //const trips = new tripsModel();
-    const tripsList = await tripsModel.getTripByUser(user_id);
-    console.log("tripsList: ", tripsList);
-    
+    const trips_history = await tripsModel.getTripByUser(user_id);
+    console.log("trips_history: ", trips_history);
+
     res.render('template', {
         locals: {
             title: "Trip History",
-            trip: tripsList,
+            trip: trips_history,
             is_logged_in: req.session.is_logged_in,
             user_id: req.session.user_id
         },
@@ -37,7 +36,7 @@ router.get('/trips_history', async (req, res) => {
     });
 });
 
-router.post('/',  (req, res) => {
+router.post('/', (req, res) => {
     const { location, trip_name, trip_date, user_id } = req.body;
     const trip = new tripsModel(null, location, trip_name, trip_date, user_id);
     const response = trip.addTrip();
