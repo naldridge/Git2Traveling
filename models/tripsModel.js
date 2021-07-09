@@ -4,11 +4,12 @@ const db = require('./conn');
 
 
 class tripsModel {
-    constructor(id, location, trip_name, trip_date, user_id) {
+    constructor(id, location, trip_name, trip_start_date, trip_end_date, user_id) {
         this.id = id;
         this.location = location;
         this.trip_name = trip_name;
-        this.trip_date = trip_date;
+        this.trip_start_date = trip_start_date;
+        this.trip_end_date = trip_end_date;
         this.user_id = user_id;
     }
 
