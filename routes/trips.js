@@ -3,22 +3,11 @@
 const express = require('express');
 const router = express.Router();
 const tripsModel = require('../models/tripsModel');
-
-router.get('/trips_plan', (req, res) => {
-    res.render('template', {
-        locals: {
-            title: "Trip Planner",
-            is_logged_in: req.session.is_logged_in
-        },
-        partials: {
-            body: 'partials/trips_plan'
-        }
-    });
-});
-
+const itineraryModel = require('../models/itineraryModel');
 
 router.get('/trips_history', async(req, res) => {
     const user_id = req.session.user_id;
+
     //const trips = new tripsModel();
     const trips_history = await tripsModel.getTripByUser(user_id);
     console.log("trips_history: ", trips_history);
@@ -27,6 +16,7 @@ router.get('/trips_history', async(req, res) => {
         locals: {
             title: "Trip History",
             trip: trips_history,
+
             is_logged_in: req.session.is_logged_in,
             user_id: req.session.user_id
         },
@@ -36,9 +26,10 @@ router.get('/trips_history', async(req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-    const { location, trip_name, trip_date, user_id } = req.body;
-    const trip = new tripsModel(null, location, trip_name, trip_date, user_id);
+
+router.post('/add_trip',  (req, res) => {
+    const { location, trip_name, trip_start_date, trip_end_date, user_id } = req.body;
+    const trip = new tripsModel(null, location, trip_name, trip_start_date, trip_end_date, user_id);
     const response = trip.addTrip();
     if (response.rowCount >= 1) {
         res.redirect('back');
