@@ -6,11 +6,10 @@
 
 html {
     box-sizing: border-box;
-
 }
 
 .header {
-    padding: 60px;
+    padding: 30px;
     text-align: center;
     background-color: coral;
     color: white;
@@ -78,7 +77,6 @@ html {
     margin: 40px;
     flex: 1;
     min-height: 20vh;
-
 }
 
 .footer div {
@@ -92,34 +90,23 @@ html {
     background-color: white;
     padding: 1rem;
     align-items: center;
-
 }
 
 .social-links article {
     padding: 1rem;
     text-align: center;
-
 }
 
 .social-links>article>a {
     margin: 1rem;
     justify-items: center;
+    font-size: 3rem;
+    padding: 0;
 }
 
 .social-links>article>p {
     margin: 1rem;
     justify-items: center;
-}
-
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 40px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .fa:hover {
@@ -130,4 +117,9 @@ html {
     background: black;
     color: white;
     border-radius: 30px;
+}
+
+.contact>a {
+    font-size: 3rem;
+    padding: 0;
 }

@@ -8,7 +8,7 @@ const itineraryModel = require('../models/itineraryModel');
 
 
 
-router.get('/history', async (req, res) => {
+router.get('/history', async(req, res) => {
     const user_id = req.session.user_id;
     const trips_history = await tripsModel.getTripByUser(user_id);
     console.log("trips_history: ", trips_history);
@@ -43,8 +43,13 @@ router.get('/plan', (req, res) => {
 
 
 
+
 router.post('/add_trip', async (req, res) => {
     const { id, location, trip_name, trip_start_date, trip_end_date, user_id } = req.body;
+
+router.post('/add_trip', async(req, res) => {
+    const { location, trip_name, trip_start_date, trip_end_date, user_id } = req.body;
+
     const trip = new tripsModel(null, location, trip_name, trip_start_date, trip_end_date, user_id);
     console.log("trip: ", trip);
     const response = await trip.addTrip(location, trip_name, trip_start_date, trip_end_date, user_id);
