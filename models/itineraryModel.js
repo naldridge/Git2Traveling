@@ -18,8 +18,7 @@ class itineraryModel {
     static async getItineraryByTrip(trip_id) {
         try {
             const response = await db.any(
-                `SELECT * FROM itinerary WHERE trip_id = ${trip_id};`
-            ) 
+                `SELECT * FROM itinerary WHERE trip_id = ${trip_id};`) 
             return response;
         } catch (err) {
             console.error("Error: ", err);

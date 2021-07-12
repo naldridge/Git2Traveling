@@ -43,13 +43,18 @@ router.get('/plan', (req, res) => {
 
 
 
+
+router.post('/add_trip', async (req, res) => {
+    const { id, location, trip_name, trip_start_date, trip_end_date, user_id } = req.body;
+
 router.post('/add_trip', async(req, res) => {
     const { location, trip_name, trip_start_date, trip_end_date, user_id } = req.body;
+
     const trip = new tripsModel(null, location, trip_name, trip_start_date, trip_end_date, user_id);
     console.log("trip: ", trip);
     const response = await trip.addTrip(location, trip_name, trip_start_date, trip_end_date, user_id);
     if (!!response.id) {
-        res.redirect('back');
+        res.redirect('/itinerary/${response.id}');
     } else {
         res.sendStatus(500);
     }

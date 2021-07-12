@@ -8,10 +8,9 @@ const { response } = require('express');
 
 
 router.get('/:trip_id', async (req, res) => {
-    const tripId = req.params.trip_id;
+    const trip_id = req.params.trip_id;
     const user_id = req.session.user_id;
-    const itinerary = new itineraryModel(tripId);
-    const trip_build = await itinerary.getItineraryByTrip(tripId);
+    const trip_build = await itineraryModel.getItineraryByTrip(trip_id);
 
     res.render('template', {
         locals: {
