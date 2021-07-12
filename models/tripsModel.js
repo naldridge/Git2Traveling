@@ -26,8 +26,9 @@ class tripsModel {
 
     static async addTrip() {
         try {
-            const query = `INSERT INTO trips (location, trip_name, trip_date, user_id) VALUES ('${this.location}', '${this.trip_name}', ${trip_date}, ${user_id})`;
+            const query = `INSERT INTO trips (location, trip_name, trip_start_date, trip_end_date, user_id) VALUES ('${this.location}', '${this.trip_name}', ${this.trip_start_date}, ${this.trip_end_date}, ${this.user_id})`;
             const response = await db.result(query);
+            console.log("RESPONSE: ", response);
             return response;
         } catch (err) {
             console.error("Error: ", err);
