@@ -6,13 +6,16 @@
 
 html {
     box-sizing: border-box;
-
 }
 
 .header {
     padding: 30px;
     text-align: center;
+
     background-color: #212529;
+
+    background-color: coral;
+
     color: white;
     margin-bottom: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
@@ -80,7 +83,6 @@ html {
     margin: 40px;
     flex: 1;
     min-height: 20vh;
-
 }
 
 .footer div {
@@ -94,19 +96,17 @@ html {
     background-color: white;
     padding: 1rem;
     align-items: center;
-
 }
 
 .social-links article {
     padding: 1rem;
     text-align: center;
-
 }
 
 .social-links>article>a {
     margin: 1rem;
     justify-items: center;
-    font-size:3rem;
+    font-size: 3rem;
     padding: 0;
 }
 
@@ -126,9 +126,7 @@ html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
-.contact>a{
-    font-size:3rem;
+.contact>a {
+    font-size: 3rem;
     padding: 0;
 }
-
-

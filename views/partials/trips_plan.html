@@ -1,31 +1,67 @@
+<style>
+    body {}
+    
+    .itinerary1-container-fluid {
+        display: inline-block;
+        margin: 150px;
+        margin-left: 700px;
+        padding: 30px;
+        border-radius: 20px;
+        width: 28%;
+        background: gray;
+        vertical-align: top;
+        justify-content: center;
+    }
+    
+    #startItinerary {
+        display: flex;
+        margin-left: 150px;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    h1 {
+        text-align: center;
+        padding-top: 30px;
+    }
+</style>
 <h1>Begin Your Journey Here</h1>
 
 
-<form action="/trips/add_trip" method="POST" id="tripDates">
-    <ul>
-        <label for="location">Where Are You Going?</label>
-        <input type="text" name="location">
-    </ul>
-    <ul>
-        <label for="trip_start_date">From:</label>
-        <input type="date" id="start_date" name="trip_start_date">
-    </ul>
-    <ul>
-        <label for="trip_end_date">To:</label>
-        <input type="date" id="end_date" name="trip_end_date">
-    </ul>
-    <ul>
-        <label for="trip_name">Nickname Your Trip:</label>
-        <input type="text" name="trip_name">
-    </ul>
-    <ul>
-        <input type="hidden" name="user_id" value="${user_id}">
-    </ul>
 
-    <button id="startItinerary" type="submit">Let's Get Started!</button>
-</form>
+<div class="itinerary1-container-fluid">
+    <form action="/trips/add_trip" method="POST" id="tripDates">
+        <ul>
+            <label for="location">Where Are You Going?</label>
+            <input type="text" name="location">
+        </ul>
+        <ul>
+            <label for="trip_start_date">From:</label>
+            <input type="date" id="start_date" name="trip_start_date">
+        </ul>
+        <ul>
+            <label for="trip_end_date">To:</label>
+            <input type="date" id="end_date" name="trip_end_date">
+        </ul>
+        <ul>
+            <label for="trip_name">Nickname Your Trip:</label>
+            <input type="text" name="trip_name">
+        </ul>
+        <ul>
+            <input type="hidden" name="user_id" value="${user_id}">
+        </ul>
 
-<form id="tripItinerary">
+        <button id="startItinerary" type="submit">Let's Get Started!</button>
+    </form>
+    <!-- ${!!is_logged_in ? `
+    <button type="submit"></button> ` : ` `} -->
+
+    <div>
+        <ul id="dateList"></ul>
+    </div>
+</div>
+
+<!-- <form id="tripItinerary">
     <ul>
         <label for="day">Day:</label>
         <select id="day" name="day"></select>
@@ -55,17 +91,11 @@
         <input type="hidden" name="trip_id">
     </ul>
     <button id="itinerarySave" type="button">Save Itinerary</button>
-</form>
+</form> -->
 
-${!!is_logged_in ? `
-<button type="submit"></button> ` : ` `}
 
-<div>
-    <ul id="dateList"></ul>
-</div>
 
-<!DOCTYPE html>
-<html>
+
 
 
 

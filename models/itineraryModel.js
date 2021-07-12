@@ -18,18 +18,17 @@ class itineraryModel {
     static async getItineraryByTrip(trip_id) {
         try {
             const response = await db.any(
-                `SELECT * FROM itinerary WHERE trip_id = ${trip_id};`
-            ) 
+                `SELECT * FROM itinerary WHERE trip_id = ${trip_id};`) 
             return response;
         } catch (err) {
             console.error("Error: ", err);
             return err.message;
         }
     }
-    static async addItinerary() {
+    static async addItinerary(day, destination, leisure, dining, transport, budget, trip_id) {
         try {
-            const query = `INSERT INTO itinerary (day, destination, leisure, dining, transport, budget, trip_id) VALUES (${this.day}, '${this.destination}', '${this.leisure}', '${this.dining}', '${this.transport}', ${this.budget}, ${this.trip_id})`;
-            const response = await db.result(query);
+            const query = `INSERT INTO itinerary (day, destination, leisure, dining, transport, budget, trip_id) VALUES (${day}, '${destination}', '${leisure}', '${dining}', '${transport}', ${budget}, ${trip_id})RETURNING id;`;
+            const response = await db.one(query);
             return response;
         } catch (err) {
             console.error("Error: ", err);

@@ -68,6 +68,19 @@ header .intro-text .intro-heading {
 }
 
 .itinerary-container-fluid {
+    display: inline-block;
+    margin: 150px;
+    margin-left: 700px;
+    padding: 30px;
+    border-radius: 20px;
+    width: 28%;
+    background: gray;
+    vertical-align: top;
+    justify-content: center;
+    background-image: url();
+}
+
+.itinerary1-container-fluid {
     display: flex;
     margin: 150px;
     padding: 30px;
@@ -76,6 +89,7 @@ header .intro-text .intro-heading {
     background: coral;
     vertical-align: top;
     justify-content: left;
+    background-image: url();
 }
 
 #itinerarySave {
