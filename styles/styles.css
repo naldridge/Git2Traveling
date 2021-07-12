@@ -66,3 +66,21 @@ header .intro-text .intro-heading {
     color: #fff;
     background-color: coral;
 }
+
+.itinerary-container-fluid {
+    display: flex;
+    margin: 150px;
+    padding: 30px;
+    border-radius: 20px;
+    width: 28%;
+    background: coral;
+    vertical-align: top;
+    justify-content: left;
+}
+
+#itinerarySave {
+    display: flex;
+    margin-left: 150px;
+    padding: 10px;
+    text-align: center;
+}
