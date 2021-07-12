@@ -1,3 +1,233 @@
+
+<h1>Begin Your Journey Here</h1>
+
+
+<form id="tripDates">
+    <ul>
+        <label for="location">Where Are You Going?</label>
+        <input type="text" name="location">
+    </ul>
+    <ul>
+        <label for="trip_start_date">From:</label>
+        <input type="date" id="start_date" name="trip_start_date">
+    </ul>
+    <ul>
+        <label for="trip_end_date">To:</label>
+        <input type="date" id="end_date" name="trip_end_date">
+    </ul>
+    <ul>
+        <label for="trip_name">Nickname Your Trip:</label>
+        <input type="text" name="trip_name">
+    </ul>
+
+    <button id="startItinerary" type="button">Let's Get Started!</button>
+</form>
+
+<form id="tripItinerary">
+    <ul>
+        <label for="day">Day:</label>
+        <select id="day" name="day"></select>
+    </ul>
+    <ul>
+        <label for="destination">Destination:</label>
+        <input type="text" name="destination">
+    </ul>
+
+    <ul>
+        <label for="leisure">Leisure:</label>
+        <input type="text" name="leisure">
+    </ul>
+    <ul>
+        <label for="dining">Dining:</label>
+        <input type="text" name="dining">
+    </ul>
+    <ul>
+        <label for="transport">Transportation:</label>
+        <input type="text" name="transport">
+    </ul>
+    <ul>
+        <label for="Budget">Budget:</label>
+        <input type="number" name="budget">
+    </ul>
+    <ul>
+        <input type="hidden" name="trip_id">
+    </ul>
+</form>
+
+${!!is_logged_in ?
+`<button type="submit"></button> `
+:
+` `} -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        /* Style the tab */
+
+        .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 15%;
+            height: 400px;
+            border-radius: 25px;
+        }
+
+        /* Style the buttons inside the tab */
+
+        .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 20px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+            border-radius: 25px;
+        }
+
+        /* Change background color of buttons on hover */
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current "tab button" class */
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+
+        .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #ccc;
+            width: 30%;
+            border-left: none;
+            height: 400px;
+            border-radius: 25px;
+            background-color: #f1f1f1;
+        }
+
+        .plan-form {
+            margin: auto;
+        }
+
+        #form-container {
+            display: block;
+            grid-template-columns: 1.4fr 1fr;
+            grid-gap: 20px;
+            text-align: center;
+        }
+
+        .form-button {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Plan Your Trip</h2>
+    <p>Plan each day's itinerary</p>
+    <div id="plan-form" class="container-fluid">
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Day 1</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Day 2</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Day 3</button>
+        </div>
+
+        <div id="London" class="tabcontent">
+            <h3>Destination</h3>
+            <p>Blah</p>
+            <h3>Leisure</h3>
+            <p>Blah</p>
+            <h3>Dining</h3>
+            <p>Blah</p>
+            <h3>Transport</h3>
+            <p>Blah</p>
+            <h3>Budget</h3>
+            <p>Blah</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <h3>Destination</h3>
+            <p>Blah</p>
+            <h3>Leisure</h3>
+            <p>BlahBlah</p>
+            <h3>Dining</h3>
+            <p>Blah</p>
+            <h3>Transport</h3>
+            <p>Blah</p>
+            <h3>Budget</h3>
+            <p>Blah</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3>Destination</h3>
+            <p>Blah</p>
+            <h3>Leisure</h3>
+            <p>BlahBlahBlah</p>
+            <h3>Dining</h3>
+            <p>Blah</p>
+            <h3>Transport</h3>
+            <p>Blah</p>
+            <h3>Budget</h3>
+            <p>Blah</p>
+        </div>
+        <div class="form-container">
+            <div class="form">
+                <button type="submit">+ Add to itinerary </button>
+
+            </div>
+
+
+        </div>
+        <div class="form-button">
+            <button type="submit">Submit</button>
+            <a href="/tripList"></a>
+        </div>
+
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+
+</body>
+
+
 <h1>Begin Your Journey Here</h1>
 
 
@@ -234,5 +464,6 @@ ${!!is_logged_in ?
         </script>
 
 </body>
+
 
 </html>
