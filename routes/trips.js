@@ -41,16 +41,7 @@ router.get('/plan', (req, res) => {
     });
 });
 
-router.post('/add_itinerary', (req, res) => {
-    const { day, destination, leisure, dining, transport, budget, trip_id } = req.body;
-    const itinerary = new itineraryModel(null, day, destination, leisure, dining, transport, budget, trip_id);
-    const response = itinerary.addItinerary();
-    if (response.rowCount >= 1) {
-        res.redirect('back');
-    } else {
-        res.sendStatus(500);
-    }
-});
+
 
 router.post('/add_trip', async(req, res) => {
     const { location, trip_name, trip_start_date, trip_end_date, user_id } = req.body;
