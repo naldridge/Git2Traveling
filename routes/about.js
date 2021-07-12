@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/about', async(req, res) => {
 
     res.render('template', {
         locals: {
