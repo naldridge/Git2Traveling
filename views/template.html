@@ -12,24 +12,38 @@
 
 <body>
 
-    <ul id="nav-bar">
-        <div>
-            <li><a href="/">HOME</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Git2Traveling</a>
 
-            <li><a href="/trips/plan">PLAN A TRIP</a></li>
-            <li><a href="/trips/history">MY TRIPS</a></li>
-            <li><a href="/about">ABOUT US</a></li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/trips/plan">Plan A Trip</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/trips/history">My Trips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/about">About Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search Previous Trips" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                <li class="nav-item">
+                    <a class="nav-link active" href='/users/login'>Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/users/register">Sign Up</a>
+                </li>
+            </div>
         </div>
-        <div id="users">
-            ${!!is_logged_in ? `
-            <li><a href="/trips/history">YOUR TRIPS</a></li>
-            <li><a href="/users/logout">Logout</a></li>` : `
-            <li><a href="/users/register">Register</a></li>
-            <li><a href="/users/login">Login</a></li>
-
-            `}
-        </div>
-    </ul>
+    </nav>
     </header>
 
     ${body}
