@@ -10,9 +10,9 @@ html {
 }
 
 .header {
-    padding: 60px;
+    padding: 30px;
     text-align: center;
-    background-color: coral;
+    background-color: #353535d7;
     color: white;
     margin-bottom: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -104,22 +104,13 @@ html {
 .social-links>article>a {
     margin: 1rem;
     justify-items: center;
+    font-size:3rem;
+    padding: 0;
 }
 
 .social-links>article>p {
     margin: 1rem;
     justify-items: center;
-}
-
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 40px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .fa:hover {
@@ -131,3 +122,10 @@ html {
     color: white;
     border-radius: 30px;
 }
+
+.contact>a{
+    font-size:3rem;
+    padding: 0;
+}
+
+
