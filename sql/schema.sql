@@ -1,10 +1,4 @@
-    CREATE TABLE users (
-    id serial PRIMARY KEY,
-    first_name text NOT NULL,
-    last_name text NOT NULL,
-    user_name text NOT NULL,
-    password varchar NOT NULL
-);
+
 
 CREATE TABLE trips (
     id serial PRIMARY KEY,

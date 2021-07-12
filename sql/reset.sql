@@ -1,4 +1,4 @@
-DROP TABLE users CASCADE;
+
 DROP TABLE trips CASCADE;
 DROP TABLE itinerary CASCADE;
 
