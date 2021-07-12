@@ -16,13 +16,18 @@
     <ul id="nav-bar">
         <div>
             <li><a href="/">HOME</a></li>
+
+            <li><a href="/trips/plan">PLAN A TRIP</a></li>
+            <li><a href="/trips/history">MY TRIPS</a></li>
+
             <li><a href="/trips_plan">PLAN A TRIP</a></li>
             <li><a href="/trips_history">MY TRIPS</a></li>
+
             <li><a href="/about">ABOUT US</a></li>
         </div>
         <div id="users">
             ${!!is_logged_in ? `
-            <li><a href="/trips_history">YOUR TRIPS</a></li>
+            <li><a href="/trips/history">YOUR TRIPS</a></li>
             <li><a href="/users/logout">Logout</a></li>` : `
             <li><a href="/users/register">Register</a></li>
             <li><a href="/users/login">Login</a></li>
