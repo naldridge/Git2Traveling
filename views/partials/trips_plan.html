@@ -2,7 +2,7 @@
 <h1>Begin Your Journey Here</h1>
 
 
-<form id="tripDates">
+<form action="/trips/add_trip" method="POST" id="tripDates">
     <ul>
         <label for="location">Where Are You Going?</label>
         <input type="text" name="location">
@@ -19,8 +19,11 @@
         <label for="trip_name">Nickname Your Trip:</label>
         <input type="text" name="trip_name">
     </ul>
+    <ul>
+        <input type="hidden" name="user_id" value="${user_id}">
+    </ul>
 
-    <button id="startItinerary" type="button">Let's Get Started!</button>
+    <button id="startItinerary" type="submit">Let's Get Started!</button>
 </form>
 
 <form id="tripItinerary">
@@ -52,13 +55,17 @@
     <ul>
         <input type="hidden" name="trip_id">
     </ul>
+    <button id="itinerarySave" type="button">Save Itinerary</button>
 </form>
 
 ${!!is_logged_in ?
-`<button type="submit"></button> `
+` `
 :
 ` `} -->
 
+<div>
+    <ul id="dateList"></ul>
+</div>
 
 <!DOCTYPE html>
 <html>

@@ -24,11 +24,14 @@ class tripsModel {
         }
     }
 
-    static async addTrip() {
+    static async addTrip(location, trip_name, trip_start_date, trip_end_date, user_id) {
         try {
-            const query = `INSERT INTO trips (location, trip_name, trip_start_date, trip_end_date, user_id) VALUES ('${this.location}', '${this.trip_name}', ${this.trip_start_date}, ${this.trip_end_date}, ${this.user_id})`;
-            const response = await db.result(query);
-            console.log("RESPONSE: ", response);
+            const query = `INSERT INTO trips (location, trip_name, trip_start_date, trip_end_date, user_id) 
+            VALUES 
+            ('${location}', '${trip_name}', ${trip_start_date}, ${trip_end_date}, ${user_id})
+            RETURNING id;`;
+            const response = await db.one(query);
+            console.log("AddTrip RESPONSE: ", response);
             return response;
         } catch (err) {
             console.error("Error: ", err);
