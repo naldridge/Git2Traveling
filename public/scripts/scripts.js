@@ -1,9 +1,10 @@
 'use strict'
 
-
+const startItinerary = document.getElementById("startItinerary");
+const itinerarySave = document.getElementById("itinerarySave");
 
 startItinerary.addEventListener("click", function () {
-    const dropdown = document.getElementById("day");
+        const dropdown = document.getElementById("day");
     const startDate = document.getElementById("start_date");
     const endDate = document.getElementById("end_date");
     const diffTime = Math.abs(new Date(endDate.value) - new Date(startDate.value));

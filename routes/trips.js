@@ -18,8 +18,9 @@ router.get('/history', async(req, res) => {
 });
 
 
-
 router.get('/plan', (req, res) => {
+    const user_id = req.session.user_id;
+    console.log("user id: ", user_id);
     res.render('template', {
         locals: {
             title: "Trip Planner",
