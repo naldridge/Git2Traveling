@@ -32,7 +32,7 @@ router.get('/plan', async (req, res) => {
     res.render('template', {
         locals: {
             title: "Trip Planner",
-            trip: 
+            //trip: , 
             is_logged_in: req.session.is_logged_in,
             user_id: req.session.user_id
         },
