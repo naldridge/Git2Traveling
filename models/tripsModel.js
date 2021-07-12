@@ -24,11 +24,11 @@ class tripsModel {
         }
     }
 
-    static async addTrip(location, trip_name, trip_start_date, trip_end_date, user_id) {
+     async addTrip(location, trip_name, trip_start_date, trip_end_date, user_id) {
         try {
             const query = `INSERT INTO trips (location, trip_name, trip_start_date, trip_end_date, user_id) 
             VALUES 
-            ('${location}', '${trip_name}', ${trip_start_date}, ${trip_end_date}, ${user_id})
+            ('${location}', '${trip_name}', '${trip_start_date}', '${trip_end_date}', ${user_id})
             RETURNING id;`;
             const response = await db.one(query);
             console.log("AddTrip RESPONSE: ", response);
