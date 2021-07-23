@@ -43,4 +43,4 @@ Project Overview -
 
 <img alt="JS Code" title="NumOfDays.JS" src="./public/images/Screenshot_JS_NumOfDays.jpg">
 
-</br>Our deadline came up sooner than expected and but we are continually fine-tuning the application. Although the site isn't live at this time, we all hope to be able to get it up and running soon. Please feel free to reach out with any comments or see my other projects @ github.com/naldridge.
+</br>Our deadline came up sooner than expected and but we are continually fine-tuning the application. Although the site isn't live at this time, we all hope to be able to get it up and running soon. Please feel free to reach out with any comments or see my other projects @ https://github.com/naldridge.
