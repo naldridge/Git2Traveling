@@ -7,7 +7,7 @@ Welcome to the README for my DigitalCrafts Back-End Project: Git2Traveling. This
 Git2Traveling was built with (I highly recommend visiting their portfolios to see some of their work as well):
 
 David Vasek - https://github.com/david-vasek
-Daniel Agbenu - https://github.com/Dannyagg
+</br>Daniel Agbenu - https://github.com/Dannyagg
 
 Project Overview - 
 
